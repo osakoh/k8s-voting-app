@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-app-deploy # Deployment name
+  labels: # key/value pairs attached to objects, such as Pods, for organising and selecting subsets of objects
+    name: worker-app-pod
+    app: demo-voting-app
+
+spec:
+  replicas: 1
+  
+  selector:
+    matchLabels: # should match pod labels in template 
+      name: worker-app-pod
+      app: demo-voting-app
+
+  template:
+    metadata:
+      name: worker-app-pod # pod name
+      labels: # should match Deployment matchLabels above 
+        name: worker-app-pod
+        app: demo-voting-app
+
+    spec:
+      containers:
+        - name: worker-app
+          image: dockersamples/examplevotingapp_worker

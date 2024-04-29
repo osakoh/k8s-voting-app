@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod # pod name
+  # key/value pairs attached to objects, such as Pods, for organising and selecting subsets of objects
+  labels: 
+    name: redis-pod 
+    app: demo-voting-app
+
+spec:
+  containers:
+    - name: redis
+      image: redis
+      ports:
+        - containerPort: 6379
+
+

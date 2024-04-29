@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-app-deploy # Deployment name
+  labels: # key/value pairs attached to objects, such as Pods, for organising and selecting subsets of objects
+    name: result-app-deploy
+    app: demo-voting-app
+
+spec:
+  replicas: 1
+  
+  selector:
+    matchLabels: # should match pod labels in template 
+        name: result-app-pod
+        app: demo-voting-app
+
+  template:
+    metadata:
+      name: result-app-pod # pod name
+      labels: # should match Deployment matchLabels above 
+        name: result-app-pod
+        app: demo-voting-app
+
+    spec:
+      containers:
+        - name: result-app-pod
+          image: kodekloud/examplevotingapp_result:v1
+          ports:
+            - containerPort: 80

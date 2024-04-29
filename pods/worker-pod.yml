@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker-app-pod # pod name
+  labels: # key/value pairs attached to objects, such as Pods, for organising and selecting subsets of objects
+    name: worker-app-pod 
+    app: demo-voting-app
+
+spec:
+  containers:
+    - name: worker-app
+      image: dockersamples/examplevotingapp_worker
+      # image: kodekloud/examplevotingapp_worker:v1
+
+
