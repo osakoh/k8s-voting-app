@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: voting-app-pod # pod name
+  name: voting-app-pod # Pod name
   labels: # key/value pairs attached to objects, such as Pods, for organising and selecting subsets of objects
     name: voting-app-pod
     app: demo-voting-app

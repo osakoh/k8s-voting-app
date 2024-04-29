@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deploy # Deployment name
+  labels: # key/value pairs attached to objects, such as Pods, for organising and selecting subsets of objects
+    name: redis-deploy
+    app: demo-voting-app
+
+spec:
+  replicas: 1
+  
+  selector:
+    matchLabels: # should match pod labels in template 
+      name: redis-pod
+      app: demo-voting-app
+
+  template:
+    metadata:
+      name: redis-pod # pod name
+      labels: # should match Deployment matchLabels above 
+        name: redis-pod
+        app: demo-voting-app
+
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6379
