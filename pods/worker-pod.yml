@@ -9,6 +9,7 @@ metadata:
 spec:
   containers:
     - name: worker-app
-      image: kodekloud/examplevotingapp_worker:v1
+      image: dockersamples/examplevotingapp_worker
+      # image: kodekloud/examplevotingapp_worker:v1
 
 
