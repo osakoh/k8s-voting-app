@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyd
+*.pyo
+*.pyw
+*.pyz
+*.egg-info/
+dist/
+build/
+venv/
+.virtualenv/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Docker
+*.log
+docker-compose*.yml
+**/.env
+**/Dockerfile*
+
+# Kubernetes
+*.log
+*.kubeconfig
+
+# HTML/CSS/JavaScript
+*.log
+*.cache
+node_modules/
+dist/
+build/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.nupkg
+*.dll
+*.exe
+*.pdb
+*.mdb
+
+# Redis
+dump.rdb
+*.aof
+*.rdb
+*.log
+*.lua
+
+# PostgreSQL
+*.log
+*.sql
+*.pgdata
+*.backup
+*.pid
+
+
+# local
+skip/
+.vscode/
